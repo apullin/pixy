@@ -64,17 +64,20 @@ static int reallocTable(void);
 
 // weak definitions (need to change this keyword for different compiler)
 // for gcc-- void __attribute__((weak)) foo()
-__weak uint32_t linkBlockSize()
+//__weak uint32_t linkBlockSize()
+uint32_t linkBlockSize()
 {
     return CRP_BLK_SIZE;
 }
 
-__weak uint32_t linkGetFlags(uint8_t index)
+//__weak uint32_t linkGetFlags(uint8_t index)
+uint32_t linkGetFlags(uint8_t index)
 {
     return 0;
 }
 
-__weak int32_t chirpInit(void)
+//__weak int32_t chirpInit(void)
+int32_t chirpInit(void)
 {
     return 0;
 }
