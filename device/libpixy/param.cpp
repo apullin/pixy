@@ -29,6 +29,9 @@
 #define PRM_ENDREC_OFFSET 			((PRM_ALLOCATED_LEN/PRM_MAX_LEN)*PRM_MAX_LEN)  // last sector
 #define PRM_ENDREC	      			(PRM_FLASH_LOC + PRM_ENDREC_OFFSET)  // last sector
 
+//GCC emits warnings due to string literals below; pragma supresses these cleanly.
+#pragma GCC diagnostic ignored "-Wwrite-strings"
+
 static const ProcModule g_module[] =
 {
 	{
