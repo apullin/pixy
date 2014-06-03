@@ -22,7 +22,7 @@
 
 /* definitions */
 /* perform a callback when mailbox flag gets signaled - within IRQ - */
-void _mbxProcess(mbxId_t mbxNum);
+static void _mbxProcess(mbxId_t mbxNum);
 
 void dummyCallback(msg_t message, msgId_t idNum, mbxParam_t parameter);
 
