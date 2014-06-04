@@ -299,13 +299,13 @@ uint16_t *Blobs::getMaxBlob(uint16_t signature)
     return NULL; // no blobs...
 } 
 
-void Blobs::getBlobs(BlobA **blobs, uint32_t *len, BlobB **ccBlobs, uint32_t *ccLen)
+void Blobs::getBlobs(BlobA **blobs, uint32_t *len)
 {
     *blobs = (BlobA *)m_blobs;
     *len = m_numBlobs;
 
-    *ccBlobs = m_codedBlobs;
-    *ccLen = m_numCodedBlobs;
+    //*ccBlobs = m_codedBlobs;
+    //*ccLen = m_numCodedBlobs;
 }
 
 

@@ -42,7 +42,7 @@ public:
     void blobify();
     uint16_t getBlock(uint8_t *buf, uint32_t buflen);
     uint16_t *getMaxBlob(uint16_t signature=0);
-    void getBlobs(BlobA **blobs, uint32_t *len, BlobB **ccBlobs, uint32_t *ccLen);
+    void getBlobs(BlobA **blobs, uint32_t *len);
 	int setParams(uint16_t maxBlobs, uint16_t maxBlobsPerModel, uint32_t minArea); 
 
     int generateLUT(uint8_t model, const Frame8 &frame, const RectA &region, ColorModel *pcmodel=NULL);
