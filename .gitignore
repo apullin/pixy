@@ -1,0 +1,7 @@
+*.o
+*.d
+*.hex
+*.axf
+*.crf
+.metadata
+*.htm
