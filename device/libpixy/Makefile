@@ -5,7 +5,8 @@ GCC_BASE = "C:/Program Files (x86)/GNU Tools ARM Embedded/4.8 2014q1/"
 #GCC_BIN  = $(GCC_BASE)bin/
 GCC_LIB  = $(GCC_BASE)lib/
 GCC_INC  = $(GCC_BASE)include/
-AS       = $(GCC_BIN)arm-none-eabi-as
+#AS       = $(GCC_BIN)arm-none-eabi-as
+AS       = $(GCC_BIN)arm-none-eabi-gcc
 CC       = $(GCC_BIN)arm-none-eabi-gcc
 CPP      = $(GCC_BIN)arm-none-eabi-g++
 LD       = $(GCC_BIN)arm-none-eabi-gcc
@@ -53,7 +54,7 @@ CORTEX_R5_HWFP_LIB_PATH = $(GCC_LIB)armv7-r/thumb/fpu
 #    OPTIM_LEVEL  = < -O compiler option or nothing >
 ######################################################################################
 PROJECT           = libpixy_m0
-MCU_CC_FLAGS      = $(CORTEX_M0PLUS_CC_FLAGS)
+MCU_CC_FLAGS      = $(CORTEX_M0PLUS_CC_FLAGS) -x assembler-with-cpp
 MCU_LIB_PATH      = $(CORTEX_M0PLUS_LIB_PATH)
 OPTIMIZE_FOR      = 
 DEBUG_LEVEL       = 
@@ -162,7 +163,7 @@ clean:
 	rm -f $(LIBPIXY_M0_TARGET) $(LIBPIXY_M4_TARGET) $(EXEC_M0_TARGET) $(VIDEO_M4_TARGET)
 
 .s.o:
-	$(AS) $(MCU_CC_FLAGS) -o $@ $<
+	$(AS) -c $(MCU_CC_FLAGS) -o $@ $<
 
 .c.o:
 	$(CC)  $(CC_FLAGS) $(CC_SYMBOLS) -std=gnu99   $(INCLUDE_PATHS) -o $@ $<
